@@ -15,22 +15,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.loginpage);
 
-        username = findViewById(R.id.username);
         password = findViewById(R.id.password);
         button = findViewById(R.id.loginbutton);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(username.getText().toString().equals("admin") && password.getText().toString().equals("admin"))
-                {
-                    Toast.makeText(MainActivity.this,"welcome!!!",Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
-                    Toast.makeText(MainActivity.this,"ivalid login",Toast.LENGTH_SHORT).show();
-                }
             }
         });
 
