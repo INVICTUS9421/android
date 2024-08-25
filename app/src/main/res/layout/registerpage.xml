@@ -91,4 +91,13 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/loginTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back to Login!!!"
+        android:clickable="true"
+        android:textColor="@android:color/black"
+        android:textSize="17dp" />
 </LinearLayout>

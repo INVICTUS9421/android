@@ -1,8 +1,5 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.google.gms.google.services)
-    alias(libs.plugins.google.firebase.crashlytics)
-
 }
 
 android {
@@ -44,7 +41,12 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
-    implementation(libs.firebase.crashlytics)
+    implementation("androidx.gridlayout:gridlayout:1.0.0")
+    implementation("androidx.cardview:cardview:1.0.0")
+    implementation("com.android.support:gridlayout-v7:28.0.0")
+    implementation("com.android.support:cardview-v7:28.0.0")
+    implementation(libs.cardview)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
