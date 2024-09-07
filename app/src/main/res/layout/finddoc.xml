@@ -64,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:gravity="center"
-                android:text="Cardiologist"
+                android:text="Surgeon"
                 android:textColor="@color/purple"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -82,7 +82,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:gravity="center"
-                android:text="Dentist"
+                android:text="Physician"
                 android:textColor="@color/purple"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -107,13 +107,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:gravity="center"
-                android:text="Cardiologist"
+                android:text="Pulmonologist"
                 android:textColor="@color/purple"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/backToHome"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -125,7 +126,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:gravity="center"
-                android:text="Dentist"
+                android:text="BACK"
                 android:textColor="@color/purple"
                 android:textSize="20sp"
                 android:textStyle="bold" />
