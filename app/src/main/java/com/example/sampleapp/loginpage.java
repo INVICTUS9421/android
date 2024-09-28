@@ -22,6 +22,7 @@ public class loginpage extends AppCompatActivity {
         setContentView(R.layout.loginpage);
 
         TextView registerTextView = findViewById(R.id.registerTextView);
+        registerTextView.setClickable(true);
         registerTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,6 +47,8 @@ public class loginpage extends AppCompatActivity {
                 else
                 {
                     Toast.makeText(loginpage.this,"Login Successful",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(loginpage.this, HomePage.class);
+                    startActivity(intent);
                 }
             }
         });

@@ -7,7 +7,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/bgnd"
     android:gravity="center">
 
     <androidx.cardview.widget.CardView
@@ -99,5 +98,5 @@
         android:text="Back to Login!!!"
         android:clickable="true"
         android:textColor="@android:color/black"
-        android:textSize="17dp" />
+        android:textSize="23dp" />
 </LinearLayout>

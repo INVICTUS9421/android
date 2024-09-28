@@ -5,15 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/bgnd"
     android:gravity="center">
 
     <androidx.cardview.widget.CardView
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:background="@drawable/custom_edittext"
-        android:layout_margin="100dp"
-        android:padding="300dp"
+        android:layout_margin="20dp"
+        android:padding="20dp"
         app:cardCornerRadius="20dp"
         app:cardElevation="70dp">
 
@@ -74,10 +73,10 @@
         android:id="@+id/registerTextView"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:text="Don't have an account? Register here"
+        android:layout_marginTop="20dp"
         android:clickable="true"
+        android:text="Don't have an account? Register here"
         android:textColor="@android:color/black"
-        android:textSize="17dp"
-        android:layout_marginTop="20dp" />
+        android:textSize="17dp" />
 
 </LinearLayout>
