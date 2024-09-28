@@ -1,8 +1,7 @@
-`<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/bgnd"
     android:padding="16dp"
     android:gravity="center">
 
@@ -13,17 +12,17 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
-            android:layout_height="120dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="8dp"
             android:cardCornerRadius="8dp"
-            android:cardElevation="10dp">
+            android:cardElevation="4dp">
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="120dp"
                 android:gravity="center"
-                android:text="Buy Medicine"
+                android:text="LAB TEST"
                 android:textColor="@color/purple"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -41,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:gravity="center"
-                android:text="Lab Tests"
+                android:text="BUY MEDICINE"
                 android:textColor="@color/purple"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -65,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:gravity="center"
-                android:text="Find Doctor"
+                android:text="FIND DOCTOR"
                 android:textColor="@color/purple"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -83,7 +82,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:gravity="center"
-                android:text="Order Details"
+                android:text="ARTICLES"
                 android:textColor="@color/purple"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -108,13 +107,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:gravity="center"
-                android:text="Health Articles"
+                android:text="ORDER DETAILS"
                 android:textColor="@color/purple"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/exitHome"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -126,12 +126,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:gravity="center"
-                android:text="Logout"
+                android:text="LOGOUT"
                 android:textColor="@color/purple"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </androidx.cardview.widget.CardView>
-
     </LinearLayout>
 
 </LinearLayout>

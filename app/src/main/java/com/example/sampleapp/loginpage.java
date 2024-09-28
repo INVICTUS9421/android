@@ -1,6 +1,8 @@
 package com.example.sampleapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
@@ -47,6 +49,5 @@ public class loginpage extends AppCompatActivity {
                 }
             }
         });
-
     }
 }
