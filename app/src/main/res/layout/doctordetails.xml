@@ -8,14 +8,15 @@
     tools:context=".DoctorDetails">
 
     <TextView
+        android:id="@+id/DocDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:id="@+id/DocDetails"
         android:text="Text"
         android:textColor="@color/purple"
         android:textSize="34sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/doclistview"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -25,7 +26,7 @@
         android:id="@+id/doclistview"
         android:layout_width="match_parent"
         android:layout_height="500dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="160dp"
         app:layout_constraintBottom_toTopOf="@id/back"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
