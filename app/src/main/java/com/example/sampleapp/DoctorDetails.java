@@ -8,6 +8,8 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import androidx.activity.OnBackPressedCallback;
+import androidx.activity.OnBackPressedDispatcher;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -53,6 +55,7 @@ public class DoctorDetails extends AppCompatActivity {
             {"Doctor Name : Dr. Ravi Patel", "Hospital Address : Nigdi", "Exp : 8yrs", "Mobile No: 7898998994", "1100"},
             {"Doctor Name : Dr. Deepa Sharma", "Hospital Address : Katraj", "Exp : 7yrs", "Mobile No: 7798998993", "1000"}
     };
+
 
     TextView tv;
     Button back;
@@ -120,5 +123,20 @@ public class DoctorDetails extends AppCompatActivity {
 
         // Setting the adapter to ListView
         listView.setAdapter(sa);
+
+        // Get the OnBackPressedDispatcher
+        OnBackPressedDispatcher onBackPressedDispatcher = getOnBackPressedDispatcher();
+
+        // Create a new OnBackPressedCallback
+        OnBackPressedCallback callback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                // Handle the back button press here
+                startActivity(new Intent(DoctorDetails.this, HomePage.class));
+            }
+        };
+
+        // Add the callback to the OnBackPressedDispatcher
+        onBackPressedDispatcher.addCallback(this, callback);
     }
 }

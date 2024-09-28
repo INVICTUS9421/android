@@ -10,8 +10,7 @@ import androidx.cardview.widget.CardView;
 public class finddoc extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.finddoc);
 
@@ -22,5 +21,11 @@ public class finddoc extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), HomePage.class));
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(getApplicationContext(), HomePage.class));
     }
 }
