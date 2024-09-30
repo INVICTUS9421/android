@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
-public class DoctorDetails extends AppCompatActivity {
+public class ListMedicine extends AppCompatActivity {
     Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,7 @@ public class DoctorDetails extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DoctorDetails.this,finddoc.class);
+                Intent intent = new Intent(ListMedicine.this,BuyMedicineActivity.class);
                 startActivity(intent);
             }
         });

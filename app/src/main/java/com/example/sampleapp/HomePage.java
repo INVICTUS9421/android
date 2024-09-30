@@ -40,7 +40,7 @@ public class HomePage extends AppCompatActivity {
         findDoctorCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HomePage.this, FindDoctorActivity.class);
+                Intent intent = new Intent(HomePage.this, finddoc.class);
                 startActivity(intent);
             }
         });

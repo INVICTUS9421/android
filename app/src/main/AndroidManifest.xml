@@ -31,9 +31,8 @@
             android:name=".HomePage"
             android:exported="true" />
 
-        <!-- Declaring the FindDoctorActivity activity -->
         <activity
-            android:name=".FindDoctorActivity"
+            android:name=".finddoc"
             android:exported="true" />
 
         <!-- Declaring the DoctorDetails activity -->

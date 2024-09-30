@@ -11,11 +11,19 @@ import android.widget.TextView;
 import androidx.activity.OnBackPressedCallback;
 import androidx.activity.OnBackPressedDispatcher;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class finddoc extends AppCompatActivity {
+
+    private List<String> cardiologistList = new ArrayList<>();
+    private List<String> dentistList = new ArrayList<>();
+    private List<String> surgeonList = new ArrayList<>();
+    private List<String> physicianList = new ArrayList<>();
+    private List<String> pulmonologistList = new ArrayList<>();
 
     private final String[][] cardiologist_details = {
             {"Doctor Name : Dr. Rajesh Gupta", "Hospital Address : Pune", "Exp : 12yrs", "Mobile No: 7898998998", "1500"},
@@ -53,76 +61,122 @@ public class finddoc extends AppCompatActivity {
             {"Doctor Name : Dr. Prashant Singh", "Hospital Address : Pune", "Exp : 11yrs", "Mobile No: 7898998996", "1300"},
             {"Doctor Name : Dr. Aarti Nair", "Hospital Address : Chinchwad", "Exp : 9yrs", "Mobile No: 8898998995", "1200"},
             {"Doctor Name : Dr. Ravi Patel", "Hospital Address : Nigdi", "Exp : 8yrs", "Mobile No: 7898998994", "1100"},
-            {"Doctor Name : Dr. Deepa Sharma", "Hospital Address : Katraj", "Exp : 7yrs", "Mobile No: 7798998993", "1000"}
+            {"Doctor Name : Dr. Suresh Kumar", "Hospital Address : Katraj", "Exp : 6yrs", "Mobile No: 7898998993", "1000"}
     };
 
-
-    TextView tv;
-    Button back;
-    ListView listView;
-    String[][] docDetails = {};
-    SimpleAdapter sa;
-    ArrayList<HashMap<String, String>> list;
-
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.doctordetails);
+        setContentView(R.layout.finddoc);
 
-        tv = findViewById(R.id.DocDetails);
-        back = findViewById(R.id.back);
-        listView = findViewById(R.id.doclistview);  // Ensure your ListView has the correct ID in your XML layout.
+        // Initialize the lists of doctors
+        cardiologistList.add("Dr. John Smith");
+        cardiologistList.add("Dr. Jane Doe");
+        cardiologistList.add("Dr. Bob Johnson");
 
-        Intent it = getIntent();
-        String title = it.getStringExtra("title");
-        tv.setText(title);
+        dentistList.add("Dr. Mike Brown");
+        dentistList.add("Dr. Emily Chen");
+        dentistList.add("Dr. David Lee");
 
-        // Setting the correct doctor details based on the title
-        switch (title) {
-            case "Cardiologist":
-                docDetails = cardiologist_details;
-                break;
-            case "Dentist":
-                docDetails = dentist_details;
-                break;
-            case "Surgeon":
-                docDetails = surgeon_details;
-                break;
-            case "Physician":
-                docDetails = physician_details;
-                break;
-            case "Pulmonologist":
-                docDetails = pulmonologist_details;
-                break;
-        }
+        surgeonList.add("Dr. Sarah Taylor");
+        surgeonList.add("Dr. Kevin White");
+        surgeonList.add("Dr. Olivia Martin");
 
-        // Setting up back button
-        back.setOnClickListener(new View.OnClickListener() {
+        physicianList.add("Dr. Michael Davis");
+        physicianList.add("Dr. Sophia Patel");
+        physicianList.add("Dr. William Hall");
+
+        pulmonologistList.add("Dr. James Wilson");
+        pulmonologistList.add("Dr. Laura Garcia");
+        pulmonologistList.add("Dr. Daniel Kim");
+
+        CardView cardiologistCard = findViewById(R.id.cardiologistCard);
+        cardiologistCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(finddoc.this, HomePage.class));
+                Intent intent = new Intent(finddoc.this, DoctorDetails.class);
+                ArrayList<String> doctorList = new ArrayList<>();
+                for (String[] details : cardiologist_details) {
+                    for (String detail : details) {
+                        doctorList.add(detail);
+                    }
+                }
+                intent.putStringArrayListExtra("doctorList", doctorList);
+                startActivity(intent);
             }
         });
 
-        // Preparing list data for SimpleAdapter
-        list = new ArrayList<>();
-        for (String[] docDetail : docDetails) {
-            HashMap<String, String> item = new HashMap<>();
-            item.put("line1", docDetail[0]);
-            item.put("line2", docDetail[1]);
-            item.put("line3", docDetail[2]);
-            item.put("line4", docDetail[3]);
-            item.put("line5", "Consulting Fees: " + docDetail[4]);
-            list.add(item);
-        }
+        CardView dentistCard = findViewById(R.id.dentistCard);
+        dentistCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(finddoc.this, DoctorDetails.class);
+                ArrayList<String> doctorList = new ArrayList<>();
+                for (String[] details : dentist_details) {
+                    for (String detail : details) {
+                        doctorList.add(detail);
+                    }
+                }
+                intent.putStringArrayListExtra("doctorList", doctorList);
+                startActivity(intent);
+            }
+        });
 
-        // Initializing SimpleAdapter with correct parameters
-        sa = new SimpleAdapter(this, list,
-                R.layout.multi_lines,  // Assuming you have a layout file for list items
-                new String[]{"line1", "line2", "line3", "line4", "line5"},
-                new int[]{R.id.line_a, R.id.line_b, R.id.line_c, R.id.line_d, R.id.line_e});
+        CardView surgeonCard = findViewById(R.id.surgeonCard);
+        surgeonCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(finddoc.this, DoctorDetails.class);
+                ArrayList<String> doctorList = new ArrayList<>();
+                for (String[] details : surgeon_details) {
+                    for (String detail : details) {
+                        doctorList.add(detail);
+                    }
+                }
+                intent.putStringArrayListExtra("doctorList", doctorList);
+                startActivity(intent);
+            }
+        });
 
-        // Setting the adapter to ListView
-        listView.setAdapter(sa);
+        CardView physicianCard = findViewById(R.id.physicianCard);
+        physicianCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(finddoc.this, DoctorDetails.class);
+                ArrayList<String> doctorList = new ArrayList<>();
+                for (String[] details : physician_details) {
+                    for (String detail : details) {
+                        doctorList.add(detail);
+                    }
+                }
+                intent.putStringArrayListExtra("doctorList", doctorList);
+                startActivity(intent);
+            }
+        });
+
+        CardView pulmonologistCard = findViewById(R.id.pulmonologistCard);
+        pulmonologistCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(finddoc.this, DoctorDetails.class);
+                ArrayList<String> doctorList = new ArrayList<>();
+                for (String[] details : pulmonologist_details) {
+                    for (String detail : details) {
+                        doctorList.add(detail);
+                    }
+                }
+                intent.putStringArrayListExtra("doctorList", doctorList);
+                startActivity(intent);
+            }
+        });
+
+        CardView back = findViewById(R.id.backToHome);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), HomePage.class));
+            }
+        });
 
         // Get the OnBackPressedDispatcher
         OnBackPressedDispatcher onBackPressedDispatcher = getOnBackPressedDispatcher();
@@ -132,7 +186,7 @@ public class finddoc extends AppCompatActivity {
             @Override
             public void handleOnBackPressed() {
                 // Handle the back button press here
-                startActivity(new Intent(finddoc.this, HomePage.class));
+                startActivity(new Intent(getApplicationContext(), HomePage.class));
             }
         };
 
