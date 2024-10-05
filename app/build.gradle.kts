@@ -42,7 +42,8 @@ dependencies {
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
     implementation("androidx.gridlayout:gridlayout:1.0.0")   // Keep androidx version
-    implementation("androidx.cardview:cardview:1.0.0")       // Keep androidx version
+    implementation("androidx.cardview:cardview:1.0.0")
+    implementation(libs.activity)       // Keep androidx version
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
