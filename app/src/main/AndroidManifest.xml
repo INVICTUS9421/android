@@ -30,6 +30,11 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".MedicineDetailsActivity"
+            android:exported="false"
+            />
+
+        <activity
             android:name=".registerpage"
             android:exported="true" /> <!-- Declaring the HomePage activity -->
         <activity
@@ -47,6 +52,8 @@
         <activity
             android:name=".DoctorDetails"
             android:exported="true" />
+        <activity android:name=".LabTestActivity"
+            android:exported="false"/>
 
     </application>
 
