@@ -1,8 +1,6 @@
 package com.example.sampleapp;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
@@ -16,11 +14,22 @@ public class loginpage extends AppCompatActivity {
     EditText email;
     EditText password;
     Button button;
+    DatabaseHelper databaseHelper;  // Database helper instance
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loginpage);
 
+        // Initialize DatabaseHelper
+        databaseHelper = new DatabaseHelper(this);
+
+        // Initialize UI components
+        email = findViewById(R.id.email);
+        password = findViewById(R.id.password);
+        button = findViewById(R.id.loginbutton);
+
+        // Navigate to register page if the user clicks the registration link
         TextView registerTextView = findViewById(R.id.registerTextView);
         registerTextView.setClickable(true);
         registerTextView.setOnClickListener(new View.OnClickListener() {
@@ -31,24 +40,28 @@ public class loginpage extends AppCompatActivity {
             }
         });
 
-        email = findViewById(R.id.email);
-        password = findViewById(R.id.password);
-        button = findViewById(R.id.loginbutton);
-
+        // Login button click listener
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String em = email.getText().toString();
                 String pass = password.getText().toString();
-                if (em.isEmpty() || pass.isEmpty())
-                {
-                    Toast.makeText(loginpage.this,"Enter all fields",Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
-                    Toast.makeText(loginpage.this,"Login Successful",Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(loginpage.this, HomePage.class);
-                    startActivity(intent);
+
+                // Check if fields are empty
+                if (em.isEmpty() || pass.isEmpty()) {
+                    Toast.makeText(loginpage.this, "Enter all fields", Toast.LENGTH_SHORT).show();
+                } else {
+                    // Validate user credentials with the database
+                    boolean isValid = databaseHelper.checkUser(em, pass);
+
+                    if (isValid) {
+                        Toast.makeText(loginpage.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                        // Navigate to the homepage
+                        Intent intent = new Intent(loginpage.this, HomePage.class);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(loginpage.this, "Invalid email or password", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
