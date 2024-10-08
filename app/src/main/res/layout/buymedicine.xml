@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="">
+    android:background="@android:color/white">
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Buy Medicine"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="116dp"
-        tools:layout_editor_absoluteY="58dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
         android:id="@+id/listmed"
-        android:layout_width="409dp"
-        android:layout_height="500dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="99dp"
-        tools:ignore="MissingConstraints" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnback"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
         android:id="@+id/btncart"
@@ -28,9 +31,9 @@
         android:layout_height="wrap_content"
         android:text="GO TO CART"
         android:textSize="15sp"
-        tools:layout_editor_absoluteX="60dp"
-        tools:layout_editor_absoluteY="639dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnback"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnback"
@@ -38,8 +41,8 @@
         android:layout_height="wrap_content"
         android:text="BACK"
         android:textSize="15sp"
-        tools:layout_editor_absoluteX="263dp"
-        tools:layout_editor_absoluteY="641dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btncart" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

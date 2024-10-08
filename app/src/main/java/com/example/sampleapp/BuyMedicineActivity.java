@@ -1,5 +1,4 @@
 package com.example.sampleapp;
-import static androidx.core.content.ContextCompat.startActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -13,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
 public class BuyMedicineActivity extends AppCompatActivity {
     String[][] packages = {
             {"Uprise-D3 1000IU Capsule", "", "", "", "50"},
@@ -46,19 +46,20 @@ public class BuyMedicineActivity extends AppCompatActivity {
             "Promotes mobility and flexibility of joints\n",
             "Helps to reduce iron deficiency due to chronic blood loss or low intake of iron"
     };
-    HashMap<String,String> item;
-    ArrayList list;
+    HashMap<String, String> item;
+    ArrayList list1;
     SimpleAdapter sa;
     ListView lst;
-    Button btnback,btncart;
+    Button btnback, btncart;
+
     @SuppressLint("MissingInflatedId")
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.buymedicine);
-        lst=findViewById(R.id.listmed);
-        btnback=findViewById(R.id.btnback);
-        btncart=findViewById(R.id.btncart);
+        lst = findViewById(R.id.listmed);
+        btnback = findViewById(R.id.btnback);
+        btncart = findViewById(R.id.btncart);
         btncart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,16 +72,19 @@ public class BuyMedicineActivity extends AppCompatActivity {
                 startActivity(new Intent(BuyMedicineActivity.this, HomePage.class));
             }
         });
-        list=new ArrayList();
-        for(int i=0;i<packages.length;i++){
-            item = new HashMap<String,String>();
-            item.put("line1",packages[i][0]);
-            item.put("line2",packages[i][1]);
-            item.put("line3",packages[i][2]);
-            item.put("line4",packages[i][3]);
-            item.put("line5","Total Cost:"+packages[i][4]+"/-");
-            list.add(item);
+        list1 = new ArrayList();
+        for (int i = 0; i < packages.length; i++) {
+            item = new HashMap<String, String>();
+            item.put("line_a", packages[i][0]);
+            item.put("line_b", packages[i][1]);
+            item.put("line_c", packages[i][2]);
+            item.put("line_d", packages[i][3]);
+            item.put("line_e", "Total Cost:" + packages[i][4] + "/-");
+            list1.add(item);
         }
-        //sa = new SimpleAdapter(this,list,R.layout.multi_lines);
+        sa = new SimpleAdapter(this, list1, R.layout.multi_lines,
+                new String[]{"line_a", "line_b", "line_c", "line_d", "line_e"},
+                new int[]{R.id.line_a, R.id.line_b, R.id.line_c, R.id.line_d, R.id.line_e});
+        lst.setAdapter(sa);
     }
 }
