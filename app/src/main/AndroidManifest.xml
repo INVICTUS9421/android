@@ -47,7 +47,12 @@
         <activity
             android:name=".DoctorDetails"
             android:exported="true" />
-
+        <activity
+            android:name=".OrderDetailsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LabTestActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

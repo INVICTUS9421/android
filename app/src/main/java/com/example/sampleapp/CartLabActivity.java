@@ -1,6 +1,5 @@
 package com.example.sampleapp;
 
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
@@ -13,11 +12,7 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -37,7 +32,7 @@ public class CartLabActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cart_lab);
+        setContentView(R.layout.labaddcart);
         datebtn=findViewById(R.id.date);
         timebtn=findViewById(R.id.time);
         chkout=findViewById(R.id.chkout);

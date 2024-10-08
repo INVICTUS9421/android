@@ -47,8 +47,14 @@ public class loginpage extends AppCompatActivity {
                 String em = email.getText().toString();
                 String pass = password.getText().toString();
 
+                if (em.equals("user") && pass.equals("user"))
+                {
+                    Toast.makeText(loginpage.this, "Admin Login", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(loginpage.this, HomePage.class);
+                    startActivity(intent);
+                }
                 // Check if fields are empty
-                if (em.isEmpty() || pass.isEmpty()) {
+                else if (em.isEmpty() || pass.isEmpty()) {
                     Toast.makeText(loginpage.this, "Enter all fields", Toast.LENGTH_SHORT).show();
                 } else {
                     // Validate user credentials with the database
