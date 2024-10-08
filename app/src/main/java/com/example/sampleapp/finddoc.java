@@ -69,27 +69,6 @@ public class finddoc extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.finddoc);
 
-        // Initialize the lists of doctors
-        cardiologistList.add("Dr. John Smith");
-        cardiologistList.add("Dr. Jane Doe");
-        cardiologistList.add("Dr. Bob Johnson");
-
-        dentistList.add("Dr. Mike Brown");
-        dentistList.add("Dr. Emily Chen");
-        dentistList.add("Dr. David Lee");
-
-        surgeonList.add("Dr. Sarah Taylor");
-        surgeonList.add("Dr. Kevin White");
-        surgeonList.add("Dr. Olivia Martin");
-
-        physicianList.add("Dr. Michael Davis");
-        physicianList.add("Dr. Sophia Patel");
-        physicianList.add("Dr. William Hall");
-
-        pulmonologistList.add("Dr. James Wilson");
-        pulmonologistList.add("Dr. Laura Garcia");
-        pulmonologistList.add("Dr. Daniel Kim");
-
         CardView cardiologistCard = findViewById(R.id.cardiologistCard);
         cardiologistCard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,9 +76,11 @@ public class finddoc extends AppCompatActivity {
                 Intent intent = new Intent(finddoc.this, DoctorDetails.class);
                 ArrayList<String> doctorList = new ArrayList<>();
                 for (String[] details : cardiologist_details) {
+                    String doctor = "";
                     for (String detail : details) {
-                        doctorList.add(detail);
+                        doctor += detail + ",";
                     }
+                    doctorList.add(doctor);
                 }
                 intent.putStringArrayListExtra("doctorList", doctorList);
                 startActivity(intent);
@@ -113,9 +94,11 @@ public class finddoc extends AppCompatActivity {
                 Intent intent = new Intent(finddoc.this, DoctorDetails.class);
                 ArrayList<String> doctorList = new ArrayList<>();
                 for (String[] details : dentist_details) {
+                    String doctor = "";
                     for (String detail : details) {
-                        doctorList.add(detail);
+                        doctor += detail + ",";
                     }
+                    doctorList.add(doctor);
                 }
                 intent.putStringArrayListExtra("doctorList", doctorList);
                 startActivity(intent);
@@ -129,9 +112,11 @@ public class finddoc extends AppCompatActivity {
                 Intent intent = new Intent(finddoc.this, DoctorDetails.class);
                 ArrayList<String> doctorList = new ArrayList<>();
                 for (String[] details : surgeon_details) {
+                    String doctor = "";
                     for (String detail : details) {
-                        doctorList.add(detail);
+                        doctor += detail + ",";
                     }
+                    doctorList.add(doctor);
                 }
                 intent.putStringArrayListExtra("doctorList", doctorList);
                 startActivity(intent);
@@ -145,9 +130,11 @@ public class finddoc extends AppCompatActivity {
                 Intent intent = new Intent(finddoc.this, DoctorDetails.class);
                 ArrayList<String> doctorList = new ArrayList<>();
                 for (String[] details : physician_details) {
+                    String doctor = "";
                     for (String detail : details) {
-                        doctorList.add(detail);
+                        doctor += detail + ",";
                     }
+                    doctorList.add(doctor);
                 }
                 intent.putStringArrayListExtra("doctorList", doctorList);
                 startActivity(intent);
@@ -161,9 +148,11 @@ public class finddoc extends AppCompatActivity {
                 Intent intent = new Intent(finddoc.this, DoctorDetails.class);
                 ArrayList<String> doctorList = new ArrayList<>();
                 for (String[] details : pulmonologist_details) {
+                    String doctor = "";
                     for (String detail : details) {
-                        doctorList.add(detail);
+                        doctor += detail + ",";
                     }
+                    doctorList.add(doctor);
                 }
                 intent.putStringArrayListExtra("doctorList", doctorList);
                 startActivity(intent);

@@ -25,7 +25,7 @@ public class ListMedicine extends AppCompatActivity {
         ArrayList<String> doctorList = getIntent().getStringArrayListExtra("doctorList");
 
         // Create an ArrayAdapter to display the list of doctors in the ListView
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, doctorList);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,  R.layout.multi_lines, doctorList);
 
         // Set the adapter to the ListView
         listView.setAdapter(adapter);
