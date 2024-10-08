@@ -74,15 +74,15 @@ public class LabTestActivity extends AppCompatActivity {
                 new int[] {R.id.line_a,R.id.line_b,R.id.line_c,R.id.line_d,R.id.line_e});
         lview.setAdapter(sa);
         lview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                                         @Override
-                                         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                                             Intent it=new Intent(LabTestActivity.this,LabTestDetailsActivity.class);
-                                             it.putExtra("text1",packages[i][0]);
-                                             it.putExtra("text2",package_details[i]);
-                                             it.putExtra("text3",packages[i][4]);
-                                             startActivity(it);
-                                         }
-                                     }
+         @Override
+         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+             Intent it=new Intent(LabTestActivity.this,LabTestDetailsActivity.class);
+             it.putExtra("text1",packages[i][0]);
+             it.putExtra("text2",package_details[i]);
+             it.putExtra("text3",packages[i][4]);
+             startActivity(it);
+         }
+     }
 
         );
         g2cart.setOnClickListener(new View.OnClickListener() {

@@ -59,7 +59,7 @@ public class HomePage extends AppCompatActivity {
         CardView orderDetailsCard = findViewById(R.id.orderDetailsCard);
         orderDetailsCard.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View    view) {
                 Intent intent = new Intent(HomePage.this, OrderDetailsActivity.class);
                 startActivity(intent);
             }

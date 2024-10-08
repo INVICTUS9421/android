@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:text="Lab Test Details"
+        android:text="Doctor Details"
         android:textColor="@color/purple"
         android:textSize="34sp"
         android:textStyle="bold"
@@ -26,6 +26,7 @@
         android:id="@+id/etxt"
         android:layout_width="326dp"
         android:layout_height="425dp"
+        android:editable="false"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
@@ -51,12 +52,12 @@
         app:layout_constraintVertical_bias="0.238" />
 
     <Button
-        android:id="@+id/addtocart"
+        android:id="@+id/bookAppointment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="88dp"
         android:layout_marginBottom="64dp"
-        android:text="ADD TO CART"
+        android:text="Book Appointment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/back"
         app:layout_constraintHorizontal_bias="1.0"
